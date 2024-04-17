@@ -43,7 +43,10 @@
     <script>
       // Function to start SOS vibrations
       function startSOS() {
-        var vibrationPattern = [100, 100, 100, 500, 500, 500, 100, 100, 100]; // SOS pattern: 3 short, 3 long, 3 short
+        var vibrationPattern = [
+          300, 300, 300, 300, 300, 500, 1000, 1000, 1000, 1000, 1000, 500, 300,
+          300, 300, 300, 300,
+        ]; // SOS pattern: 3 short, 3 long, 3 short
         navigator.vibrate(vibrationPattern); // Start vibration
       }
     </script>
