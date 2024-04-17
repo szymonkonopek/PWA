@@ -24,39 +24,14 @@
   </head>
   <body class="fullscreen">
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-1">
-      <a class="navbar-brand" href="#">Home</a>
+      <a class="navbar-brand" href="./index.html">Home</a>
       <a class="nav-link" href="./map.html">Map</a>
-      <a class="nav-link" href="./sos.html">SOS</a>
+      <a class="nav-link" href="#">SOS</a>
     </nav>
-    <div class="container">
+    <div class="container pt-3">
       <h1 class="title">Hello World!</h1>
-      <button class="btn">Home page</button>
-      <div class="container d-flex flex-center">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card" style="width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title">Szymon Konopek</h5>
-                <p class="card-text">
-                  Student Informatyki Stosowanej na uczelni Uniwersytecie
-                  Ekonomicznym w Krakowie
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card" style="width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title">Amelia Lis</h5>
-                <p class="card-text">
-                  Studentka Informatyki Stosowanej na uczelni Uniwersytecie
-                  Ekonomicznym w Krakowie
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <button class="btn btn-danger" onclick="startSOS()">enable SOS</button>
+      <!-- Button to trigger SOS vibrations -->
     </div>
 
     <script src="js/main.js"></script>
@@ -65,5 +40,14 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // Function to start SOS vibrations
+      function startSOS() {
+        var vibrationPattern = [
+          1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000,
+        ]; // SOS pattern: 3 short, 3 long, 3 short
+        navigator.vibrate(vibrationPattern); // Start vibration
+      }
+    </script>
   </body>
 </html>

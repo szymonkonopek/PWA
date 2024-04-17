@@ -21,42 +21,23 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      #map {
+        height: 400px;
+      }
+    </style>
   </head>
   <body class="fullscreen">
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-1">
-      <a class="navbar-brand" href="#">Home</a>
-      <a class="nav-link" href="./map.html">Map</a>
+      <a class="navbar-brand" href="./index.html">Home</a>
+      <a class="nav-link" href="#">Map</a>
       <a class="nav-link" href="./sos.html">SOS</a>
     </nav>
-    <div class="container">
-      <h1 class="title">Hello World!</h1>
-      <button class="btn">Home page</button>
-      <div class="container d-flex flex-center">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card" style="width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title">Szymon Konopek</h5>
-                <p class="card-text">
-                  Student Informatyki Stosowanej na uczelni Uniwersytecie
-                  Ekonomicznym w Krakowie
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card" style="width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title">Amelia Lis</h5>
-                <p class="card-text">
-                  Studentka Informatyki Stosowanej na uczelni Uniwersytecie
-                  Ekonomicznym w Krakowie
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="container pt-3">
+      <h1 class="title">Your location: 🗺️</h1>
+      <div id="map"></div>
     </div>
 
     <script src="js/main.js"></script>
@@ -65,5 +46,32 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      // Initialize the map
+      var map = L.map('map').setView([0, 0], 13);
+
+      // Add OpenStreetMap tile layer
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+      }).addTo(map);
+
+      // Get current location
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          var lat = position.coords.latitude;
+          var lng = position.coords.longitude;
+
+          // Set map view to current location
+          map.setView([lat, lng], 13);
+
+          // Add marker for current location
+          L.marker([lat, lng]).addTo(map);
+        },
+        function (error) {
+          console.log('Error getting current location:', error);
+        }
+      );
+    </script>
   </body>
 </html>
