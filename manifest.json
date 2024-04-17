@@ -9,9 +9,8 @@
     }
   ],
   "lang": "en-US",
-  "start_url": "/PWA/",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "white",
-  "theme_color": "white",
-  "id": "/PWA/"
+  "theme_color": "white"
 }
