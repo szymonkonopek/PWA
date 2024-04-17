@@ -9,9 +9,9 @@
     }
   ],
   "lang": "en-US",
-  "start_url": "https://szymonkonopek.github.io/",
+  "start_url": "/PWA/",
   "display": "standalone",
   "background_color": "white",
   "theme_color": "white",
-  "id": "https://szymonkonopek.github.io/"
+  "id": "/PWA/"
 }
