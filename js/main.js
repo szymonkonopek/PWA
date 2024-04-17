@@ -2,6 +2,8 @@ window.onload = () => {
   'use strict';
 
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js');
+    navigator.serviceWorker.register(
+      './https://szymonkonopek.github.io//sw.js'
+    );
   }
 };

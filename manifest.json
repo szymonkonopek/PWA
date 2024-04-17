@@ -9,8 +9,9 @@
     }
   ],
   "lang": "en-US",
-  "start_url": "/index.html",
+  "start_url": "https://szymonkonopek.github.io/",
   "display": "standalone",
   "background_color": "white",
-  "theme_color": "white"
+  "theme_color": "white",
+  "id": "https://szymonkonopek.github.io/"
 }
